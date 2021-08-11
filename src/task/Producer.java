@@ -7,7 +7,7 @@ public class Producer extends Thread {
     private final List<Integer> randoms;
 
     int i;
-    int numbers = 8;
+    int numbers = 100;
 
     public Producer(List<Integer> randoms) {
         this.randoms = randoms;
@@ -20,7 +20,10 @@ public class Producer extends Thread {
                 for (i = 0; i < new Random().nextInt(numbers); i++) {
                     int newValue = new Random().nextInt(numbers);
                     randoms.add(newValue);
+                    /*Для проверки метода Producer
                     System.out.println("add  " + newValue);
+
+                     */
                 }
                 System.out.println("wrote");
                 try {
